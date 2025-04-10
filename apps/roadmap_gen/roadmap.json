@@ -1,0 +1,292 @@
+
+{
+  "nodes": [
+    {
+      "id": "1",
+      "data": {
+        "label": "Current State",
+        "description": "Software Engineer, ₹8,00,000/year, IT Services, Python, Django, SQL, JavaScript, 3 years Backend, Bachelor's in Computer Science, Bangalore"
+      },
+      "position": {
+        "x": 50,
+        "y": 0
+      },
+      "type": "input"
+    },
+    {
+      "id": "2",
+      "data": {
+        "label": "Desired State",
+        "description": "Machine Learning Engineer, ₹15,00,000/year, AI & Data Science, Python, TensorFlow, PyTorch, ML Algorithms, Data Engineering, Statistical Analysis, 5+ years, Bachelor's in Computer Science (Master's preferred), Remote or Bangalore"
+      },
+      "position": {
+        "x": 800,
+        "y": 0
+      },
+      "type": "output"
+    },
+    {
+      "id": "3",
+      "data": {
+        "label": "Stage 1: Foundational Upskilling (6-12 Months)",
+        "description": "Acquire core machine learning knowledge and skills. Python, ML Fundamentals, Deep Learning, Data Engineering, Portfolio Development"
+      },
+      "position": {
+        "x": 50,
+        "y": 200
+      }
+    },
+    {
+      "id": "4",
+      "data": {
+        "label": "Stage 2: Experience Acquisition (6-12 Months)",
+        "description": "Gain practical experience. Internal Transition, External Opportunities, Open Source Contributions, Freelancing (Optional)"
+      },
+      "position": {
+        "x": 400,
+        "y": 200
+      }
+    },
+    {
+      "id": "5",
+      "data": {
+        "label": "Stage 3: Advanced Learning and Specialization (Ongoing)",
+        "description": "Deepen knowledge, specialize, and stay updated. Master's Degree (Optional), Specialized Certifications, Continuous Learning, Networking, Advanced Projects"
+      },
+      "position": {
+        "x": 800,
+        "y": 200
+      }
+    },
+    {
+      "id": "6",
+      "data": {
+        "label": "Python Mastery",
+        "description": "Reinforce Python skills (NumPy, Pandas, Scikit-learn)"
+      },
+      "position": {
+        "x": 50,
+        "y": 400
+      }
+    },
+    {
+      "id": "7",
+      "data": {
+        "label": "ML Fundamentals",
+        "description": "Online courses covering ML algorithms, statistical analysis"
+      },
+      "position": {
+        "x": 200,
+        "y": 400
+      }
+    },
+    {
+      "id": "8",
+      "data": {
+        "label": "Deep Learning",
+        "description": "TensorFlow and PyTorch"
+      },
+      "position": {
+        "x": 350,
+        "y": 400
+      }
+    },
+    {
+      "id": "9",
+      "data": {
+        "label": "Data Engineering Basics",
+        "description": "Data collection, cleaning, preprocessing"
+      },
+      "position": {
+        "x": 500,
+        "y": 400
+      }
+    },
+    {
+      "id": "10",
+      "data": {
+        "label": "Portfolio Development",
+        "description": "Build personal projects (Kaggle, ML applications)"
+      },
+      "position": {
+        "x": 650,
+        "y": 400
+      }
+    },
+    {
+      "id": "11",
+      "data": {
+        "label": "Internal Transition",
+        "description": "AI/ML projects in current company"
+      },
+      "position": {
+        "x": 400,
+        "y": 400
+      }
+    },
+    {
+      "id": "12",
+      "data": {
+        "label": "External Opportunities",
+        "description": "Internships, Junior Data Scientist roles"
+      },
+      "position": {
+        "x": 550,
+        "y": 400
+      }
+    },
+    {
+      "id": "13",
+      "data": {
+        "label": "Open Source",
+        "description": "Contribute to AI/ML projects on GitHub"
+      },
+      "position": {
+        "x": 700,
+        "y": 400
+      }
+    },
+    {
+      "id": "14",
+      "data": {
+        "label": "Master's Degree (Optional)",
+        "description": "Further education in AI/ML"
+      },
+      "position": {
+        "x": 800,
+        "y": 400
+      }
+    },
+    {
+      "id": "15",
+      "data": {
+        "label": "Certifications",
+        "description": "TensorFlow, AWS, Azure"
+      },
+      "position": {
+        "x": 950,
+        "y": 400
+      }
+    },
+        {
+      "id": "16",
+      "data": {
+        "label": "Continuous Learning",
+        "description": "Stay updated with research papers, conferences"
+      },
+      "position": {
+        "x": 1100,
+        "y": 400
+      }
+    },
+        {
+      "id": "17",
+      "data": {
+        "label": "Networking",
+        "description": "Build relations with professionals"
+      },
+      "position": {
+        "x": 1250,
+        "y": 400
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1-3",
+      "source": "1",
+      "target": "3",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3-4",
+      "source": "3",
+      "target": "4",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e4-5",
+      "source": "4",
+      "target": "5",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e5-2",
+      "source": "5",
+      "target": "2",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3-6",
+      "source": "3",
+      "target": "6",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3-7",
+      "source": "3",
+      "target": "7",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3-8",
+      "source": "3",
+      "target": "8",
+      "type": "smoothstep"
+    },
+        {
+      "id": "e3-9",
+      "source": "3",
+      "target": "9",
+      "type": "smoothstep"
+    },
+        {
+      "id": "e3-10",
+      "source": "3",
+      "target": "10",
+      "type": "smoothstep"
+    },
+        {
+      "id": "e4-11",
+      "source": "4",
+      "target": "11",
+      "type": "smoothstep"
+    },
+            {
+      "id": "e4-12",
+      "source": "4",
+      "target": "12",
+      "type": "smoothstep"
+    },
+                {
+      "id": "e4-13",
+      "source": "4",
+      "target": "13",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e5-14",
+      "source": "5",
+      "target": "14",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e5-15",
+      "source": "5",
+      "target": "15",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e5-16",
+      "source": "5",
+      "target": "16",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e5-17",
+      "source": "5",
+      "target": "17",
+      "type": "smoothstep"
+    }
+  ]
+}
