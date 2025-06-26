@@ -43,22 +43,25 @@ class RoadmapGen():
 	def career_researcher_task(self) -> Task:
 		return Task(
 			config=self.tasks_config['career_researcher_task'],
-			# output_variable='advised_career'  # Store the output for reuse
+			output_variable='advised_career'
 		)
 
 	@task
 	def roadmap_generator_task(self) -> Task:
 		return Task(
 			config=self.tasks_config['roadmap_generator_task'],
-			# input_variables={"advised_career": advised_career}, # Use the output from the previous task
-			output_file='roadmap.md'
+			input_variables={'advised_career': 'advised_career'},
+			output_file='roadmap.md',
+			context_from_tasks=['career_researcher_task']
 		)
 
 	@task
 	def react_flow_roadmap_generator_task(self) -> Task:
 		return Task(
 			config=self.tasks_config['react_flow_roadmap_generator_task'],
-			output_file='roadmap.json'
+			input_variables={'advised_career': 'advised_career'},
+			output_file='roadmap.json',
+			context_from_tasks=['career_researcher_task', 'roadmap_generator_task']
 		)
 
 	

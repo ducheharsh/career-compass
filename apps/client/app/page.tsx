@@ -68,9 +68,14 @@ export default async function Home() {
             {result}
           </a>
         </div>
-        <Button appName="docs" className={styles.secondary}>
-          Open alert
-        </Button>
+        <iframe
+          src="https://drive.google.com/viewerng/viewer?embedded=true&url=http://infolab.stanford.edu/pub/papers/google.pdf#toolbar=0&scrollbar=0"
+          frameBorder="0"
+          scrolling="auto"
+          height="100%"
+          width="100%"
+        ></iframe>
+
       </main>
       <footer className={styles.footer}>
         <a
@@ -99,7 +104,7 @@ export default async function Home() {
             width={16}
             height={16}
           />
-          {
+          {/* {
             justFiddling.map((item) => (
               <div key={item.id}>
                 <p>{item.userId}</p>
@@ -107,7 +112,7 @@ export default async function Home() {
                 <p>{item.body}</p>
               </div>
             ))
-          }
+          } */}
         </a>
       </footer>
     </div>

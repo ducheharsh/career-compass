@@ -5,7 +5,11 @@ description = "roadmap-gen using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<3.13"
 dependencies = [
-    "crewai[tools]>=0.100.1,<1.0.0"
+    "crewai[tools]>=0.100.1,<1.0.0",
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.0.0"
 ]
 
 [project.scripts]
@@ -14,6 +18,7 @@ run_crew = "roadmap_gen.main:run"
 train = "roadmap_gen.main:train"
 replay = "roadmap_gen.main:replay"
 test = "roadmap_gen.main:test"
+api = "roadmap_gen.cli:api"
 
 [build-system]
 requires = ["hatchling"]

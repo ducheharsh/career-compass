@@ -14,30 +14,110 @@ pip install uv
 
 Next, navigate to your project directory and install the dependencies:
 
-(Optional) Lock the dependencies and install them by using the CLI command:
 ```bash
-crewai install
+pip install -e .
 ```
-### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+### Configuration
+
+1. Create a `.env` file in the project root with the following variables:
+```env
+# Flask Configuration
+PORT=5000
+FLASK_DEBUG=True
+
+# OpenAI Configuration
+OPENAI_API_KEY=your-api-key-here
+
+# CrewAI Configuration
+CREWAI_VERBOSE=True
+```
+
+2. Replace `your-api-key-here` with your actual OpenAI API key.
+
+## Running the Project
+
+### CLI Mode
+
+To run the roadmap generation in CLI mode:
+
+```bash
+python -m roadmap_gen.main
+```
+
+### API Mode
+
+To start the Flask API server:
+
+```bash
+# Using the installed command
+roadmap_gen api
+
+# Or with custom options
+roadmap_gen api --port 8080 --debug
+```
+
+The API will be available at `http://localhost:5000` (or your specified port) with the following endpoints:
+
+1. Health Check:
+```bash
+curl http://localhost:5000/health
+```
+
+2. Generate Roadmap:
+```bash
+curl -X POST http://localhost:5000/api/roadmap \
+  -H "Content-Type: application/json" \
+  -d '{
+    "current_job_title": "Software Engineer",
+    "current_salary": "₹8,00,000 per annum",
+    "current_job_market": "IT Services",
+    "desired_job_title": "Machine Learning Engineer",
+    "desired_salary": "₹15,00,000 per annum",
+    "desired_job_market": "AI & Data Science",
+    "current_industry": "Software Development",
+    "desired_industry": "Artificial Intelligence",
+    "current_job_function": "Backend Development",
+    "desired_job_function": "AI Model Development",
+    "current_skill_set": ["Python", "Django", "SQL", "JavaScript"],
+    "desired_skill_set": ["Python", "TensorFlow", "PyTorch", "ML Algorithms", "Data Engineering"],
+    "current_level_of_experience": "3 years",
+    "desired_level_of_experience": "5+ years",
+    "current_location": "Bangalore, India",
+    "desired_location": "Remote or Bangalore, India",
+    "current_level_of_education": "Bachelor's in Computer Science",
+    "desired_level_of_education": "Master's in AI & Machine Learning"
+  }'
+```
+
+The API will return a JSON response with:
+- `status`: Success or error status
+- `result`: The crew execution result
+- `roadmap_md`: The generated roadmap in Markdown format
+- `roadmap_json`: The generated roadmap in React Flow JSON format
+
+## Development
+
+To run the project in development mode:
+
+1. Install development dependencies:
+```bash
+pip install -e ".[dev]"
+```
+
+2. Run the API server with debug mode:
+```bash
+roadmap_gen api --debug
+```
+
+## Customizing
 
 - Modify `src/roadmap_gen/config/agents.yaml` to define your agents
 - Modify `src/roadmap_gen/config/tasks.yaml` to define your tasks
 - Modify `src/roadmap_gen/crew.py` to add your own logic, tools and specific args
 - Modify `src/roadmap_gen/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the roadmap-gen Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+- Modify `src/roadmap_gen/api.py` to customize the API endpoints and behavior
+- Modify `src/roadmap_gen/cli.py` to add new CLI commands
 
 ## Understanding Your Crew
 
@@ -45,7 +125,7 @@ The roadmap-gen Crew is composed of multiple AI agents, each with unique roles, 
 
 ## Support
 
-For support, questions, or feedback regarding the RoadmapGen Crew or crewAI.
+For support, questions, or feedback regarding the RoadmapGen Crew or crewAI:
 - Visit our [documentation](https://docs.crewai.com)
 - Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
 - [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
